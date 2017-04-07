@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+	<head>
+		<title>Subscriptions - RSS</title>
+	</head>
+	<body>
+		<outline htmlUrl="http://www.250bpm.com/blog" title="250bpm-blogs" xmlUrl="http://250bpm.com/feed/pages/pagename/start/category/blog/t/250bpm-blogs/h/http%3A%2F%2Fwww.250bpm.com%2Fblog" type="rss" text="250bpm-blogs"/>
+		<outline htmlUrl="http://weibo.com/u/2566038535" title="503: Service Unavailable" xmlUrl="https://diy-devz.rhcloud.com/weibo?uid=2566038535" type="rss" text="503: Service Unavailable"/>
+		<outline title="Beyond the Void" xmlUrl="https://www.byvoid.com/feed" type="rss" text="Beyond the Void"/>
+		<outline htmlUrl="http://www.codeofhonor.com/blog" title="Code Of Honor" xmlUrl="http://www.codeofhonor.com/blog/feed" type="rss" text="Code Of Honor"/>
+		<outline htmlUrl="http://codetrips.com" title="Code Trips &amp; Tips" xmlUrl="http://codetrips.com/feed/" type="rss" text="Code Trips &amp; Tips"/>
+		<outline htmlUrl="http://news.csdn.net" title="CSDN最新资讯" xmlUrl="http://www.csdn.net/article/rss_lastnews" type="rss" text="CSDN最新资讯"/>
+		<outline htmlUrl="https://github.com/hangyan" title="Github" xmlUrl="https://github.com/hangyan.private.atom?token=ADwaxz7mcOkdKiYS2nAEtBATD0u7FlGSks6zE9kSwA==" type="rss" text="Github"/>
+		<outline htmlUrl="https://github.com/hangyan" title="Private Feed for hangyan" xmlUrl="https://github.com/hangyan.private.atom?token=ADwaxxpw9i4oLNBMktHydY6gxFAMchMoks6z6TjywA==" type="rss" text="Private Feed for hangyan"/>
+		<outline htmlUrl="http://www.solidot.org" title="Solidot" xmlUrl="http://solidot.org.feedsportal.com/c/33236/f/556826/index.rss" type="rss" text="Solidot"/>
+		<outline title="博客 - 伯乐在线" xmlUrl="http://blog.jobbole.com/feed/" type="rss" text="博客 - 伯乐在线"/>
+		<outline htmlUrl="http://top.jobbole.com" title="头条 - 伯乐在线" xmlUrl="http://top.jobbole.com/feed/" type="rss" text="头条 - 伯乐在线"/>
+		<outline htmlUrl="http://www.oschina.net/?from=rss" title="开源中国社区最新新闻" xmlUrl="http://www.oschina.net/news/rss" type="rss" text="开源中国社区最新新闻"/>
+		<outline htmlUrl="http://www.chong4.com.cn/" title="穿衣打扮" xmlUrl="http://www.chong4.com.cn/feed.php" type="rss" text="穿衣打扮"/>
+		<outline htmlUrl="http://www.huxiu.com" title="虎嗅网" xmlUrl="http://www.huxiu.com/rss/0.xml" type="rss" text="虎嗅网"/>
+		<outline htmlUrl="http://coolshell.cn" title="酷 壳 - CoolShell.cn" xmlUrl="http://coolshell.cn/feed" type="rss" text="酷 壳 - CoolShell.cn"/>
+	</body>
+</opml>

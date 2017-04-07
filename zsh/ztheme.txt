@@ -1,0 +1,38 @@
+# Variables for precmd
+LONG_HOST=$(hostname)
+SHORT_HOST=${LONG_HOST[(ws:.:)1]}
+HOST_LEN=${#SHORT_HOST}
+LSCOLORS=hxfxcxdxHxegedabagacad
+BAT_CHARGE='/Users/cstedman/Code/Shell/config/batcharge.py'
+
+# Precommand which runs before redrawing the prompt
+function precmd() {
+  RPROMPTGOAL=${(z)$($BAT_CHARGE 2>/dev/null)}
+  RPROMPT="%{$RPROMPTGOAL[1]%}$RPROMPTGOAL[2]%{$RPROMPTGOAL[3]%}"
+  LINENUM=""
+  for ((i = 0; i < $COLUMNS - 45 - $HOST_LEN; i++)); do LINENUM="${LINENUM}-"; done
+  if test -n "$VIRTUAL_ENV" ; then
+    PROMPT=$_OLD_VIRTUAL_PS1
+  fi
+}
+
+# Indicate that the CWD is a git or mercurial repository
+function vcsCheck {
+    git branch >/dev/null 2>/dev/null && echo '± ' && return
+    hg root >/dev/null 2>/dev/null && echo '☿ ' && return
+}
+
+# Indicate that the CWD contains a python virtualenv (white snake symbol),
+# or that a virtualenv is active (yellow snake symbol)
+function virtualenvCheck {
+  if [[ -a bin/activate ]] || test -n "$VIRTUAL_ENV" ; then
+    if test -n "$VIRTUAL_ENV" ; then
+      echo "$fg_bold[yellow]蛇 $reset_color"
+    else
+      echo "$fg[white]蛇 $reset_color"
+    fi
+  fi
+}
+
+PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[white]%})%n%{$reset_color%}@%{$fg_bold[white]%}%m%{$reset_color%} ➤  %(5L.%{$fg[red]%}.%(3L.%{$fg[yellow]%}.%{$fg[white]%}))LVL $SHLVL%{$reset_color%} $LINENUM %{$fg[white]%}%D{%a %b %d %Y}%{$reset_color%} ➤  %(2T.%{$fg_bold[red]%}.%(1T.%{$fg_bold[red]%}.%{$fg[white]%}))%T%{$reset_color%}
+%(2j.%{$fg_bold[red]%}%j .%(1j.%{$fg_bold[yellow]%}%j .))%{$reset_color%}%~ %{$fg_bold[red]%}$(vcsCheck)%{$reset_color%}$(virtualenvCheck)%(?.%{$fg_bold[green]%}✓.%{$fg_bold[red]%}✗)%{$reset_color%} '

@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/yayu/Golang/src/github.com/docker/docker/docker'
+let g:netrw_dirhist_2='/Users/yayu/Github/Emacs/dev/haskell'
+let g:netrw_dirhist_3='/Users/yayu/Github/yayua.github.io/assets/_sass'
+let g:netrw_dirhist_4='/Users/yayu/Github/urbem.github.io/_drafts'
+let g:netrw_dirhist_5='/Users/yayu/Github/urbem.github.io/_posts'
