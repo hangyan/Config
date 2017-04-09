@@ -47,11 +47,23 @@ gen_ssh_keys() {
  
 clone_repos() {
     yellow "CLONE REPOS:"
+    yellow "--Config"
     test -d ~/Config || git clone git@github.com:hangyan/Config.git ~/Config
+    yellow "--emacs.d"
     test -d ~/.emacs.d/ || git clone git@github.com:hangyan/emacs.d.git ~/.emacs.d
+    yellow "Code"
     test -d ~/Code || git clone git@github.com:hangyan/Code.git ~/Code
 }
 
+
+
+_update_brew_remote(){
+    cd "$(brew --repo)" || exit
+    git remote -v | head -1 | grep "tsinghua.edu.cn" || git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+    cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core" || exit
+    git remote -v | head -1 | grep "tsinghua.edu.cn" || (git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git && brew update)
+    cd ~ 
+}
 
 install_brew() {
     # install brew
@@ -61,6 +73,7 @@ install_brew() {
         yellow "Install brew..."
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
+    _update_brew_remote
 }
 
 
@@ -73,18 +86,18 @@ set_osx() {
     defaults write com.apple.finder QuitMenuItem -bool true 
 
     # link to icloud
-    [ ! -L iCloud ] || ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
+    test  -L iCloud  || ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
  
 }
 
 
 brew_check_all() {
 	declare -a tools=('pgcli' 'npm'  'markdown' 'thefuck' 'fish' \
-							  'httpie' 'jq' 'icdiff' 'htop-osx' 'mtr' 'cmake' \
-							  'zsh' 'p7zip' 'svn' 'python' 'git' 'emacs' \
-							  'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark' \
-                                                          'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting' \
-                                                          'aira2')
+				  'httpie' 'jq' 'icdiff' 'htop-osx' 'mtr' 'cmake' \
+				  'zsh' 'p7zip' 'svn' 'python' 'git' 'emacs' \
+				  'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark' \
+                                  'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting' \
+                                  'wget' 'mas' 'go' 'coreutils')
 	for i in "${tools[@]}"; do
 		echo "Checking $i..."
 		brew info $i | grep -q "Not installed"
@@ -144,13 +157,82 @@ change_sudo() {
 
 
 pip_install() {
-    pip install ipython yapf autopep8 flake8 isort pylint jedi
+    sudo pip install ipython yapf autopep8 flake8 isort pylint jedi glances mycli importmagic epc  > /dev/null
 }
 
-configure_vim() {
+install_vim() {
     git clone git://github.com/amix/vimrc.git ~/.vim_runtime
     sh ~/.vim_runtime/install_basic_vimrc.sh
 }
+
+configure_vim(){
+    yellow "VIM:"
+    test -d ~/.vim_runtime || install_vim
+}
+
+
+install_tools() {
+    yellow "TOOLS:"
+    f=~/Project/
+    test -d $f || mkdir $f
+    cd $f || exit
+    mkdir apps
+    yellow "--Item2"
+    test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/beta/iTerm2-3_0_15.zip
+    yellow "--Emacs"
+    echo "emacs"
+    test -d /Applications/Emacs.app/ || wget -c https://emacsformacosx.com/emacs-builds/Emacs-25.1-1-universal.dmg
+    yellow "--LightTable"
+    test -d /Applications/LightTable.app/ || wget -c https://github.com/LightTable/LightTable/releases/download/0.8.1/lighttable-0.8.1-mac.tar.gz
+    
+
+}
+
+
+install_npm() {
+    yellow "CNPM:"
+    which cnpm || npm install -g cnpm --registry=https://registry.npm.taobao.org
+}
+
+
+_install_as() {
+    id=$(mas search "$1" | head -1 | awk '{print $1}')
+    mas install "$id"
+}
+
+install_from_appstore() {
+    yellow "APPSTORE:"
+    yellow "--PopClip"
+    test -d /Applications/PopClip.app/ || _install_as PopClip
+    yellow "--CopyClip"
+    test -d /Applications/CopyClip.app || _install_as "CopyClip"
+    yellow "--Quiver"
+    test -d /Applications/Quiver.app/ || _install_as Quiver
+    
+    
+}
+
+install_golang() {
+    which go || exit
+    yellow "GOLANG:"
+    test -d ~/Golang || mkdir ~/Golang
+    mkdir -p ~/Golang/src/golang.org/x/
+    p=github.com/golang/tools/go
+    test -d ~/Golang/src/$p || go get $p
+    p=github.com/golang/net
+    test -d ~/Golang/src/$p || go get $p
+    test -d ~/Golang/src/golang.org/x/tools ||  ln -sf ~/Golang/src/github.com/golang/tools/ ~/Golang/src/golang.org/x/tools
+    test -d ~/Golang/src/golang.org/x/net || ln -sf ~/Golang/src/github.com/golang/net/ ~/Golang/src/golang.org/x/net
+    which golint || go get -u github.com/golang/lint/golint
+    which guru || go install golang.org/x/tools/cmd/guru
+    which godoctor || go get github.com/godoctor/godoctor
+    which gometalinter || go get github.com/alecthomas/gometalinter
+    which godef || go get github.com/rogpeppe/godef
+    which gocode || go get -u github.com/nsf/gocode
+    gometalinter --install --update
+
+}
+
 
 main() {
     init
@@ -162,9 +244,14 @@ main() {
     set_git
     change_sudo
     brew_install_all
+    install_tools
+    install_npm
     install_zsh
     pip_install
     configure_vim
+    install_from_appstore
+    install_golang
 }
 
 main
+
