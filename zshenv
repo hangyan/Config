@@ -8,7 +8,7 @@ export LANG=en_US.UTF-8
 
 
 export GOPATH=~/Golang/
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 
