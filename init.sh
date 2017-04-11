@@ -182,8 +182,6 @@ install_tools() {
     yellow "--Emacs"
     echo "emacs"
     test -d /Applications/Emacs.app/ || wget -c https://emacsformacosx.com/emacs-builds/Emacs-25.1-1-universal.dmg
-    yellow "--LightTable"
-    test -d /Applications/LightTable.app/ || wget -c https://github.com/LightTable/LightTable/releases/download/0.8.1/lighttable-0.8.1-mac.tar.gz
     
 
 }
