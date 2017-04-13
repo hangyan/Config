@@ -157,7 +157,7 @@ change_sudo() {
 
 
 pip_install() {
-    sudo pip install ipython yapf autopep8 flake8 isort pylint jedi glances mycli importmagic epc  > /dev/null
+    sudo pip install ipython yapf autopep8 flake8 isort pylint jedi glances mycli importmagic epc ipython  > /dev/null
 }
 
 install_vim() {
