@@ -97,7 +97,7 @@ brew_check_all() {
 				  'zsh' 'p7zip' 'svn' 'python' 'git' 'emacs' \
 				  'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark' \
                                   'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting' \
-                                  'wget' 'mas' 'go' 'coreutils')
+                                  'wget' 'mas' 'go' 'coreutils' 'hadolint')
 	for i in "${tools[@]}"; do
 		echo "Checking $i..."
 		brew info $i | grep -q "Not installed"
@@ -227,6 +227,9 @@ install_golang() {
     which gometalinter || go get github.com/alecthomas/gometalinter
     which godef || go get github.com/rogpeppe/godef
     which gocode || go get -u github.com/nsf/gocode
+    which govendor || go get -u github.com/kardianos/govendor
+    which deadcode || go get github.com/tsenart/deadcode
+    which unused || go get honnef.co/go/tools/cmd/unused
     gometalinter --install --update
 
 }
