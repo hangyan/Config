@@ -143,7 +143,7 @@ alias gu='git add --all . && git commit -am "Update" && git push origin'
 alias gm1='git commit -am "1"'
 alias glf='git --no-pager log --decorate=short --pretty=oneline -n1'
 
-
+alias dp="pip install -i https://pypi.douban.com/simple/ "
 
 
 ## new comand
