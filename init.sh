@@ -97,7 +97,7 @@ brew_check_all() {
 				  'zsh' 'p7zip' 'svn' 'python' 'git' 'emacs' \
 				  'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark' \
                                   'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting' \
-                                  'wget' 'mas' 'go' 'coreutils' 'hadolint')
+                                  'wget' 'mas' 'go' 'coreutils' 'hadolint' 'clang-format')
 	for i in "${tools[@]}"; do
 		echo "Checking $i..."
 		brew info $i | grep -q "Not installed"
