@@ -228,8 +228,7 @@ install_golang() {
     which godef || go get github.com/rogpeppe/godef
     which gocode || go get -u github.com/nsf/gocode
     which govendor || go get -u github.com/kardianos/govendor
-    which deadcode || go get github.com/tsenart/deadcode
-    which unused || go get honnef.co/go/tools/cmd/unused
+    which shfmt || go get -u github.com/mvdan/sh/cmd/shfmt
     gometalinter --install --update
 
 }

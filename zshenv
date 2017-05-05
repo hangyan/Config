@@ -20,3 +20,11 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 
 
+
+## java
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+#export PATH=$JAVA_HOME/bin:$PATH
+#export CLASSPATH=$JAVA_HOME/lib:./:$CLASSPATH
+#export TPATH=$SOFT/Jar
+#
+#
