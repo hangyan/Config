@@ -88,7 +88,7 @@ brew_check_all() {
     'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark'
     'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting'
     'wget' 'mas' 'go' 'coreutils' 'hadolint' 'clang-format'
-    'go-delve/delve/delve' 'git-town')
+    'go-delve/delve/delve' 'git-town' 'exa')
   for i in "${tools[@]}"; do
     echo "Checking $i..."
     brew info $i | grep -q "Not installed"
