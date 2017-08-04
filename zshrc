@@ -125,7 +125,7 @@ alias dp="pip install -i https://pypi.douban.com/simple/ "
 
 ## new comand
 alias cat="ccat"
-#alias ls="exa-osx-x86-64"
+alias ls="exa"
 alias fuck='$(thefuck $(fc -ln -1))'
 
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
