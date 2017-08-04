@@ -1,6 +1,6 @@
 [user]
-  email = hangyan@alauda.io
-  name = Hang Yan
+	email = hangyan@alauda.io
+	name = Hang Yan
 
 [alias]
   up = pull --rebase --autostash
