@@ -43,8 +43,6 @@ clone_repos() {
   yellow "CLONE REPOS:"
   yellow "--Config"
   test -d ~/Config || git clone git@github.com:hangyan/Config.git ~/Config
-  yellow "--emacs.d"
-  test -d ~/.emacs.d/ || git clone git@github.com:hangyan/emacs.d.git ~/.emacs.d
   yellow "Code"
   test -d ~/Code || git clone git@github.com:hangyan/Code.git ~/Code
 }
@@ -84,7 +82,7 @@ set_osx() {
 brew_check_all() {
   declare -a tools=('pgcli' 'npm' 'markdown' 'thefuck' 'fish'
     'httpie' 'jq' 'icdiff' 'htop-osx' 'mtr' 'cmake'
-    'zsh' 'p7zip' 'svn' 'python' 'git' 'emacs'
+    'zsh' 'p7zip' 'svn' 'python' 'git' 
     'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark'
     'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting'
     'wget' 'mas' 'go' 'coreutils' 'hadolint' 'clang-format'
@@ -98,7 +96,7 @@ brew_check_all() {
 }
 
 brew_cask_check_all() {
-  declare -a tools=('shiftit' 'black-screen')
+  declare -a tools=('shiftit' 'black-screen', 'insomnia')
   for i in "${tools[@]}"; do
     echo "Cask Checking $i..."
     brew cask info $i | grep -q "Not installed"
@@ -166,10 +164,6 @@ install_tools() {
   mkdir apps
   yellow "--Item2"
   test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/beta/iTerm2-3_0_15.zip
-  yellow "--Emacs"
-  echo "emacs"
-  test -d /Applications/Emacs.app/ || wget -c https://emacsformacosx.com/emacs-builds/Emacs-25.1-1-universal.dmg
-
 }
 
 install_npm() {
