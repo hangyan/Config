@@ -130,7 +130,3 @@ alias ll="ls --git --long"
 alias fuck='$(thefuck $(fc -ln -1))'
 
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
-
-fpath=(/usr/local/share/zsh-completions /Users/yayu/.oh-my-zsh/plugins/mvn /Users/yayu/.oh-my-zsh/plugins/command-not-found /Users/yayu/.oh-my-zsh/plugins/python /Users/yayu/.oh-my-zsh/plugins/history /Users/yayu/.oh-my-zsh/plugins/gnu-utils /Users/yayu/.oh-my-zsh/plugins/debian /Users/yayu/.oh-my-zsh/plugins/copydir /Users/yayu/.oh-my-zsh/plugins/copyfile /Users/yayu/.oh-my-zsh/plugins/svn /Users/yayu/.oh-my-zsh/plugins/archlinux /Users/yayu/.oh-my-zsh/plugins/battery /Users/yayu/.oh-my-zsh/plugins/ant /Users/yayu/.oh-my-zsh/plugins/git /Users/yayu/.oh-my-zsh/functions /Users/yayu/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.2/functions)
-
-compinit
