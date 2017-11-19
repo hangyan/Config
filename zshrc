@@ -130,3 +130,4 @@ alias ll="ls --git --long"
 alias fuck='$(thefuck $(fc -ln -1))'
 
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
+
