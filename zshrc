@@ -121,12 +121,9 @@ alias gu='git add --all . && git commit -am "Update" && git push origin'
 alias gm1='git commit -am "1"'
 alias glf='git --no-pager log --decorate=short --pretty=oneline -n1'
 
-alias dp="pip install -i https://pypi.douban.com/simple/ "
 
 ## new comand
 alias cat="ccat"
-alias ls="exa"
-alias ll="ls --git --long"
 alias fuck='$(thefuck $(fc -ln -1))'
 
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
