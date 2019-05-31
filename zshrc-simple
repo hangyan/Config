@@ -17,7 +17,6 @@ export PATH=$GOPATH/bin:$PATH
 # brew install exa
 alias ls="exa"
 alias ll="exa -l"
-alias cat="ccat"
 alias gst="git status"
 alias gcb="git checkout -b "
 alias gco="git checkout "
