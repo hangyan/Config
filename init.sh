@@ -59,7 +59,7 @@ install_brew() {
   # install brew
   yellow "BREW:"
 
-  if ! type "brew" >/dev/null; then
+  if ! command -v brew; then
     yellow "Install brew..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
@@ -218,7 +218,7 @@ main() {
   install_brew
   set_osx
   set_git
-  change_sudo
+  #change_sudo
   brew_install_all
   install_tools
   install_npm

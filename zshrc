@@ -135,3 +135,5 @@ test -f ~/.private_zsh_env && source ~/.private_zsh_env
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/Golang
+export PATH=$GOPATH/bin:$PATH
+export PATH=/usr/loca/bin:$PATH

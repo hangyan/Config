@@ -1,3 +1,4 @@
 xmonad/history
 moc/pid
 *.log
+.idea/
