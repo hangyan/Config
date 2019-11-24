@@ -113,6 +113,8 @@ test -e /usr/local/bin/aliyun_zsh_complete.sh && source /usr/local/bin/aliyun_zs
 
 export GH=$GOPATH/src/github.com
 
+export PATH=$GOPATH/bin:$PATH
+
 ### syntax-highlight
 SH_FILE=/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -f "$SH_FILE" ]; then
@@ -131,6 +133,7 @@ alias glf='git --no-pager log --decorate=short --pretty=oneline -n1'
 alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 ## new comand
+alias cat="ccat"
 alias fuck='$(thefuck $(fc -ln -1))'
 
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
@@ -162,3 +165,6 @@ LC_ALL=en_US.UTF-8
 
 ## dirs
 export dcp=~/Golang/src/github.com/alauda/captain
+export GOROOT=/usr/local/go
+export PATH=$GOROOT/bin:$PATH
+export GOPATH=$HOME/Golang

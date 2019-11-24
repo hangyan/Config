@@ -74,4 +74,13 @@
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [core]
-	compression = 0
+    compression = 0
+
+
+[core] 
+packedGitLimit = 512m 
+packedGitWindowSize = 512m 
+[pack] 
+deltaCacheSize = 2047m 
+packSizeLimit = 2047m 
+windowMemory = 2047m

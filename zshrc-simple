@@ -1,0 +1,28 @@
+#  brew install  zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#  brew install zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# npm install --global pure-prompt
+#autoload -U promptinit; promptinit
+#prompt pure
+
+# git clone --recursive https://github.com/mgee/slimline.git
+source ~/Project/slimline/slimline.zsh
+
+export PATH=/usr/local/bin/:$PATH
+export GOPATH=~/Golang
+export PATH=$GOPATH/bin:$PATH
+
+# brew install exa
+alias ls="exa"
+alias ll="exa -l"
+alias gst="git status"
+alias gcb="git checkout -b "
+alias gco="git checkout "
+
+
+# zsh options
+setopt APPEND_HISTORY
+HISTFILE=~/.zhistory
+SAVEHIST=100000
