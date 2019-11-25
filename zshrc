@@ -85,6 +85,13 @@ b() {
 # alias
 ## recursive  directory listing.
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+## lsd
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
 
 alias ..='cd ..'
 alias ...='cd ../../'
@@ -98,7 +105,6 @@ alias l.='ls -d .* --color=auto'
 alias l='ls -lAh --color'
 ## List all folders
 alias lf='ls -Gl | grep ^d'   #Only list directories
-alias lsd='ls -Gal | grep ^d' #Only list directories, including hidden ones
 
 setopt extended_glob
 
@@ -121,9 +127,10 @@ alias gpom="git push origin master"
 alias gcom="git commit -am "
 alias gu='git add --all . && git commit -am "Update" && git push origin'
 alias gm1='git commit -am "1"'
+alias rel="git checkout release"
+alias gbd='git branch -D '
 alias glf='git --no-pager log --decorate=short --pretty=oneline -n1'
-
-alias dp="pip install -i https://pypi.douban.com/simple/ "
+alias glp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 ## new comand
 alias cat="ccat"
@@ -132,6 +139,32 @@ alias fuck='$(thefuck $(fc -ln -1))'
 test -f ~/.private_zsh_env && source ~/.private_zsh_env
 
 
+### dirs
+alias jk="cd ~/Golang/src/krobelus"
+alias ag="ag"
+
+
+## for emacs
+export GOPATH=~/Golang
+
+
+## locale
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Setting for the new UTF-8 terminal support in Lion
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+
+
+
+
+## dirs
+export dcp=~/Golang/src/github.com/alauda/captain
 export GOROOT=/usr/local/go
 export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/Golang

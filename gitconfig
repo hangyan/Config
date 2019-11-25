@@ -14,7 +14,6 @@
 	repo = town-repo
 	ship = town-ship
 	sync = town-sync
-	up = pull --rebase --autostash
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -23,3 +22,5 @@
 	trustExitCode = true
 [core]
 	editor = vi
+[github]
+	user = hangyan
