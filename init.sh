@@ -80,13 +80,12 @@ set_osx() {
 }
 
 brew_check_all() {
-  declare -a tools=('pgcli' 'npm' 'markdown' 'thefuck' 'fish'
-    'httpie' 'jq' 'icdiff' 'htop-osx' 'mtr' 'cmake'
-    'zsh' 'p7zip' 'svn' 'python' 'git' 
-    'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'spark'
-    'chezscheme' 'python' 'zsh-completions' 'zsh-syntax-highlighting'
-    'wget' 'mas' 'go' 'coreutils' 'hadolint' 'clang-format'
-    'go-delve/delve/delve' 'git-town' 'exa')
+  declare -a tools=( 'npm' 'markdown' 'thefuck'
+    'httpie' 'jq' 'icdiff' 'htop-osx'
+    'zsh' 'p7zip'  'python' 'git' 'lsd'
+    'ccat' 'ruby' 'ssh-copy-id' 'cloc' 
+     'python' 'zsh-completions' 'zsh-syntax-highlighting'
+    'wget' 'mas' 'go' 'coreutils' 'exa')
   for i in "${tools[@]}"; do
     echo "Checking $i..."
     brew info $i | grep -q "Not installed"
@@ -96,7 +95,7 @@ brew_check_all() {
 }
 
 brew_cask_check_all() {
-  declare -a tools=('shiftit' 'black-screen', 'insomnia')
+  declare -a tools=('shiftit' 'insomnia')
   for i in "${tools[@]}"; do
     echo "Cask Checking $i..."
     brew cask info $i | grep -q "Not installed"
@@ -104,10 +103,15 @@ brew_cask_check_all() {
   done
 }
 
+
+
 brew_install_all() {
   yellow "BREW INSTALL:"
   brew_check_all
   brew_cask_check_all
+
+  brew cask info font-hack-nerd-font | grep -q "Not installed"
+   [[ $? -eq 0 ]] && echo -e "Installing nerd font..." && brew tap homebrew/cask-fonts && brew cask info font-hack-nerd-font
 
 }
 
@@ -191,22 +195,22 @@ install_golang() {
   which go || exit
   yellow "GOLANG:"
   test -d ~/Golang || mkdir ~/Golang
-  mkdir -p ~/Golang/src/golang.org/x/
-  p=github.com/golang/tools/go
-  test -d ~/Golang/src/$p || go get $p
-  p=github.com/golang/net
-  test -d ~/Golang/src/$p || go get $p
-  test -d ~/Golang/src/golang.org/x/tools || ln -sf ~/Golang/src/github.com/golang/tools/ ~/Golang/src/golang.org/x/tools
-  test -d ~/Golang/src/golang.org/x/net || ln -sf ~/Golang/src/github.com/golang/net/ ~/Golang/src/golang.org/x/net
+  #mkdir -p ~/Golang/src/golang.org/x/
+  #p=github.com/golang/tools/go
+  #test -d ~/Golang/src/$p || go get $p
+  #p=github.com/golang/net
+  #test -d ~/Golang/src/$p || go get $p
+  #test -d ~/Golang/src/golang.org/x/tools || ln -sf ~/Golang/src/github.com/golang/tools/ ~/Golang/src/golang.org/x/tools
+  #test -d ~/Golang/src/golang.org/x/net || ln -sf ~/Golang/src/github.com/golang/net/ ~/Golang/src/golang.org/x/net
   which golint || go get -u github.com/golang/lint/golint
   which guru || go install golang.org/x/tools/cmd/guru
   which godoctor || go get github.com/godoctor/godoctor
-  which gometalinter || go get github.com/alecthomas/gometalinter
+  #which gometalinter || go get github.com/alecthomas/gometalinter
   which godef || go get github.com/rogpeppe/godef
   which gocode || go get -u github.com/nsf/gocode
-  which govendor || go get -u github.com/kardianos/govendor
+  #which govendor || go get -u github.com/kardianos/govendor
   which shfmt || go get -u github.com/mvdan/sh/cmd/shfmt
-  gometalinter --install --update
+  #gometalinter --install --update
 
 }
 
@@ -223,7 +227,7 @@ main() {
   install_tools
   install_npm
   install_zsh
-  pip_install
+ # pip_install
   configure_vim
   install_from_appstore
   install_golang

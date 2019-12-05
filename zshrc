@@ -170,3 +170,4 @@ export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/Golang
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/loca/bin:$PATH
+export GOPROXY=https://gocenter.io
