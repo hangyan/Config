@@ -188,6 +188,8 @@ install_from_appstore() {
   test -d /Applications/CopyClip.app || _install_as "CopyClip"
   yellow "--Quiver"
   test -d /Applications/Quiver.app/ || _install_as Quiver
+  yellow "--TaskTab"
+  test -d /Applications/TaskTab.app/ || _install_as TaskTab
 
 }
 
