@@ -173,3 +173,8 @@ export PATH=/usr/loca/bin:$PATH
 export GOPROXY=https://gocenter.io
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
+
+
+
+# https://github.com/mollifier/cd-bookmark
+alias cdb='cd-bookmark'

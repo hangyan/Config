@@ -28,7 +28,7 @@ init() {
 }
 
 wait_for_me() {
-  read -r "Press any key to continue..."
+  read -r "Add key to github and countinue..."
 }
 
 # generate ssh keys for github and other uses
@@ -170,8 +170,9 @@ install_tools() {
   test -d $f || mkdir $f
   cd $f || exit
   mkdir apps
+  cd apps
   yellow "--Item2"
-  test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/stable/iTerm2-3_3_7.zip
+  test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/stable/iTerm2-3_3_7.zip && unzip unzip iTerm2-3_3_7.zip
 }
 
 install_npm() {
