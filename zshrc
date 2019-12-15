@@ -178,4 +178,9 @@ export PATH=$PATH:/usr/local/kubebuilder/bin
 
 # https://github.com/mollifier/cd-bookmark
 # source /usr/local/share/antigen/antigen.zsh
-alias cdb='cd-bookmark'
+#alias cdb='cd-bookmark'
+
+
+[ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
+
+
