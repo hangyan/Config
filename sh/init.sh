@@ -82,8 +82,8 @@ set_osx() {
 brew_check_all() {
   declare -a tools=( 'npm' 'markdown' 'thefuck'
     'httpie' 'jq' 'icdiff' 'htop-osx'
-    'zsh' 'p7zip'  'python' 'git' 'lsd'
-    'ccat' 'ruby' 'ssh-copy-id' 'cloc' 
+    'zsh' 'p7zip'  'python' 'git' 'lsd' 'emacs'
+    'ccat' 'ruby' 'ssh-copy-id' 'cloc' 'aspell'
      'python' 'zsh-completions' 'zsh-syntax-highlighting'
     'wget' 'mas' 'go' 'coreutils' 'exa')
   for i in "${tools[@]}"; do

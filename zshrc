@@ -173,3 +173,9 @@ export PATH=/usr/loca/bin:$PATH
 export GOPROXY=https://gocenter.io
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
+
+
+
+
+autoload -U +X compinit && compinit
+source <(kubectl completion zsh)
