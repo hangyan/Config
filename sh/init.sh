@@ -28,7 +28,7 @@ init() {
 }
 
 wait_for_me() {
-  read -r "Press any key to continue..."
+  read -r "Add key to github and countinue..."
 }
 
 # generate ssh keys for github and other uses
@@ -95,7 +95,7 @@ brew_check_all() {
 }
 
 brew_cask_check_all() {
-  declare -a tools=('shiftit' 'insomnia')
+  declare -a tools=('shiftit')
   for i in "${tools[@]}"; do
     echo "Cask Checking $i..."
     brew cask info $i | grep -q "Not installed"
@@ -119,11 +119,15 @@ new_zsh() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   ln -sf ~/Config/zshrc ~/.zshrc
   ln -sf ~/Config/zshenv ~/.zshenv
+
+  source /usr/local/share/antigen/antigen.zsh
+  antigen bundle mollifier/cd-bookmark
 }
 
 install_zsh() {
   yellow "ZSH:"
   test -d ~/.oh-my-zsh/ || new_zsh
+
 }
 
 set_git() {
@@ -166,8 +170,9 @@ install_tools() {
   test -d $f || mkdir $f
   cd $f || exit
   mkdir apps
+  cd apps
   yellow "--Item2"
-  test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/beta/iTerm2-3_0_15.zip
+  test -d /Applications/iTerm.app || wget -c https://iterm2.com/downloads/stable/iTerm2-3_3_7.zip && unzip unzip iTerm2-3_3_7.zip
 }
 
 install_npm() {
@@ -181,7 +186,8 @@ _install_as() {
 }
 
 install_from_appstore() {
-  yellow "APPSTORE:"
+    yellow "APPSTORE:"
+    mas signin hang.yan@hotmail.com
   yellow "--PopClip"
   test -d /Applications/PopClip.app/ || _install_as PopClip
   yellow "--CopyClip"
@@ -211,7 +217,7 @@ install_golang() {
   which godef || go get github.com/rogpeppe/godef
   which gocode || go get -u github.com/nsf/gocode
   #which govendor || go get -u github.com/kardianos/govendor
-  which shfmt || go get -u github.com/mvdan/sh/cmd/shfmt
+  #which shfmt || go get -u github.com/mvdan/sh/cmd/shfmt
   #gometalinter --install --update
 
 }
@@ -231,7 +237,7 @@ main() {
   install_zsh
  # pip_install
   configure_vim
-  install_from_appstore
+  #install_from_appstore
   install_golang
 }
 

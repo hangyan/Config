@@ -177,5 +177,11 @@ export PATH=$PATH:/usr/local/kubebuilder/bin
 
 
 
-autoload -U +X compinit && compinit
-source <(kubectl completion zsh)
+# https://github.com/mollifier/cd-bookmark
+# source /usr/local/share/antigen/antigen.zsh
+#alias cdb='cd-bookmark'
+
+
+[ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
+
+
