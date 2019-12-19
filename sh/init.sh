@@ -122,8 +122,7 @@ new_zsh() {
   ln -sf ~/Config/zshrc ~/.zshrc
   ln -sf ~/Config/zshenv ~/.zshenv
 
-  source /usr/local/share/antigen/antigen.zsh
-  antigen bundle mollifier/cd-bookmark
+
 }
 
 install_zsh() {
