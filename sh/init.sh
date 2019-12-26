@@ -110,6 +110,8 @@ brew_install_all() {
   brew_check_all
   brew_cask_check_all
 
+  brew info glow || brew install charmbracelet/homebrew-tap/glow
+
   brew cask info font-hack-nerd-font | grep -q "Not installed"
    [[ $? -eq 0 ]] && echo -e "Installing nerd font..." && brew tap homebrew/cask-fonts && brew cask info font-hack-nerd-font
 
