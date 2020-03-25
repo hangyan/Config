@@ -86,3 +86,5 @@ packSizeLimit = 2047m
 windowMemory = 2047m
 [github]
 	user = hangyan
+[credential]
+	helper = store

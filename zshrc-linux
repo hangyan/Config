@@ -181,4 +181,5 @@ export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 
 [ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
 
-
+# docker
+export DOCKER_CLI_EXPERIMENTAL=enabled
