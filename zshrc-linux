@@ -170,6 +170,7 @@ export PATH=/usr/loca/bin:$PATH
 export GOPROXY=https://gocenter.io
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
+export PATH=$PATH:~/Soft/GoLand-2018.3.6/bin
 
 
 export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
