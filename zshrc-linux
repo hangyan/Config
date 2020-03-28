@@ -172,7 +172,6 @@ export GOPROXY=https://gocenter.io
 export PATH=$PATH:/usr/local/kubebuilder/bin
 export PATH=$PATH:~/Soft/GoLand-2018.3.6/bin
 
-
 export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 
 # https://github.com/mollifier/cd-bookmark
@@ -184,3 +183,10 @@ export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 
 # docker
 export DOCKER_CLI_EXPERIMENTAL=enabled
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# pbcopy on linux
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
