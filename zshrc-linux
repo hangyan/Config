@@ -190,3 +190,11 @@ export PATH="$HOME/gems/bin:$PATH"
 # pbcopy on linux
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
+
+
+# kubectl
+autoload -U +X compinit && compinit
+source <(kubectl completion zsh)
+
+# shortcut for http proxy
+alias set_proxy='export http_proxy=http://127.0.0.1:1081/'
