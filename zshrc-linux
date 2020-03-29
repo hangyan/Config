@@ -198,3 +198,7 @@ source <(kubectl completion zsh)
 
 # shortcut for http proxy
 alias set_proxy='export http_proxy=http://127.0.0.1:1081/'
+
+
+# pip path
+export PATH=$PATH:~/.local/bin/
