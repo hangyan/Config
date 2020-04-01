@@ -1,0 +1,4 @@
+{
+	"data-root": "/home/docker",
+	"registry-mirrors": ["https://docker.mirrors.ustc.edu.cn/"]
+}
