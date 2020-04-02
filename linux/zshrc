@@ -212,7 +212,7 @@ test -f ~/.private_zsh_env && source ~/.private_zsh_env
 
 ### dirs
 alias ag="ag"
-
+alias vi="vim"
 
 
 
@@ -236,7 +236,7 @@ export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/Golang
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/loca/bin:$PATH
-export GOPROXY=https://gocenter.io
+# export GOPROXY=https://gocenter.io
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
 export PATH=$PATH:~/Soft/GoLand-2018.3.6/bin
@@ -248,7 +248,7 @@ export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 #alias cdb='cd-bookmark'
 
 
-# [ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
+[ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
 
 # docker
 export DOCKER_CLI_EXPERIMENTAL=enabled
@@ -263,7 +263,7 @@ alias pbpaste='xsel --clipboard --output'
 
 # kubectl
 autoload -U +X compinit && compinit
-# which kubectl && source <(kubectl completion zsh)
+[ -f /opt/bin/kubectl ] && source <(kubectl completion zsh)
 
 # shortcut for http proxy
 alias set_proxy='export http_proxy=http://127.0.0.1:1081/'
@@ -274,3 +274,8 @@ export PATH=$PATH:~/.local/bin/
 
 # golang
 export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+
+
+# local kubernetes bins
+export PATH=/opt/bin:/opt/cni/bin:$PATH
