@@ -146,7 +146,8 @@ alias ag="ag"
 
 ## for emacs
 export GOPATH=~/Golang
-
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
 
 ## locale
 export LC_CTYPE=en_US.UTF-8
