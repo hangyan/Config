@@ -274,7 +274,6 @@ export PATH=$PATH:~/.local/bin/
 
 # golang
 export GO111MODULE=on
-export GOPROXY=https://goproxy.cn
 
 
 # local kubernetes bins
