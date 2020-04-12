@@ -248,7 +248,9 @@ export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 #alias cdb='cd-bookmark'
 
 
-[ -f ~/Config/lib/z.sh ] && . ~/Config/lib/z.sh
+# z.lua
+[ -f ~/Config/lib/z.lua ] && eval "$(lua ~/Config/lib/z.lua --init zsh)"
+
 
 # docker
 export DOCKER_CLI_EXPERIMENTAL=enabled
@@ -278,3 +280,9 @@ export GO111MODULE=on
 
 # local kubernetes bins
 export PATH=/opt/bin:/opt/cni/bin:$PATH
+
+
+# gem
+export PATH=/home/yayu/.gem/ruby/2.7.0/bin:$PATH
+export GEM_HOME=$HOME/Project/gems
+export PATH=$HOME/Project/gems/bin:$PATH
