@@ -249,8 +249,9 @@ export PATH=/home/yayu/Soft/GoLand-2018.3.6/bin:$PATH
 
 
 # z.lua
+export _ZL_MATCH_MODE=1
 [ -f ~/Config/lib/z.lua ] && eval "$(lua ~/Config/lib/z.lua --init zsh)"
-
+alias zb="z -b"
 
 # docker
 export DOCKER_CLI_EXPERIMENTAL=enabled
