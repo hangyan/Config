@@ -221,6 +221,7 @@ test -f ~/.private_zsh_env && source ~/.private_zsh_env
 alias ag="ag"
 alias vi="vim"
 
+[ -x "$(command -v ccat)" ] && alias cat='ccat'
 
 
 ## locale
