@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -263,13 +270,16 @@ export PATH="$HOME/gems/bin:$PATH"
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
+# kuberneters
+export PATH=/opt/bin:/opt/cni/bin:$PATH
+
 
 # kubectl
 autoload -U +X compinit && compinit
 [ -f /opt/bin/kubectl ] && source <(kubectl completion zsh)
 
 # shortcut for http proxy
-alias set_proxy='export http_proxy=http://127.0.0.1:1081/'
+alias set_proxy='export http_proxy=http://127.0.0.1:20171/'
 alias unset_proxy='unset http_proxy'
 
 # pip path
@@ -287,3 +297,7 @@ export PATH=/opt/bin:/opt/cni/bin:$PATH
 export PATH=/home/yayu/.gem/ruby/2.7.0/bin:$PATH
 export GEM_HOME=$HOME/Project/gems
 export PATH=$HOME/Project/gems/bin:$PATH
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

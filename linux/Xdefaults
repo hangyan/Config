@@ -56,8 +56,8 @@ URxvt.borderLess:False
 
 !!!字体设置
 Xft.dpi:96
-URxvt.font:xft:Monospace:size=9:style=Regular:antialias=true,xft:WenQuanYi Bitmap Song:size=9:style=Regular:antialias=true
-URxvt.boldfont:xft:Monospace:size=10:style=Bold:antialias=true,xft:WenQuanYi Bitmap Song:size=10:style=Bold:antialias=true
+URxvt.font:xft:MesloLGS NF:size=9:style=Regular:antialias=true,xft:WenQuanYi Bitmap Song:size=9:style=Regular:antialias=true
+URxvt.boldfont:xft:MesloLGS NF Bold:size=10:style=Bold:antialias=true,xft:WenQuanYi Bitmap Song:size=10:style=Bold:antialias=true
 
 !icons
 URxvt.iconFile: /usr/share/icons/Mint-X/apps/32/terminal.png
