@@ -147,7 +147,6 @@ alias ag="ag"
 ## for emacs
 export GOPATH=~/Golang
 export GO111MODULE=on
-export GOPROXY=https://goproxy.cn
 
 ## locale
 export LC_CTYPE=en_US.UTF-8
@@ -171,7 +170,6 @@ export PATH=$GOROOT/bin:$PATH
 export GOPATH=$HOME/Golang
 export PATH=$GOPATH/bin:$PATH
 export PATH=/usr/loca/bin:$PATH
-export GOPROXY=https://gocenter.io
 
 export PATH=$PATH:/usr/local/kubebuilder/bin
 
