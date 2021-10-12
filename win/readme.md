@@ -6,6 +6,20 @@
 
 
 
+## emacs
+
+1. set HOME env
+
+## shell
+
+bash setup
+
+```bash
+git clone git://github.com/ohmybash/oh-my-bash.git ~/.oh-my-bash
+cp ~/.bashrc ~/.bashrc.orig
+cp ~/.oh-my-bash/templates/bashrc.osh-template ~/.bashrc
+```
+
 ## Choco
 
 1. ruby

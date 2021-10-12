@@ -1,0 +1,16 @@
+fast_git_ps1 ()
+{
+   printf -- "$(git branch 2>/dev/null | sed -ne '/^\* / s/^\* \(.*\)/ [\1] / p')"
+}
+
+PS1='\[\033]0;$MSYSTEM:\w\007
+\033[32m\]\u@\h \[\033[33m\w$(fast_git_ps1)\033[0m\]
+$ '
+
+
+# z lib
+. ~/Github/config/lib/z.sh
+
+# path
+export PATH=$PATH:~/scoop/shims
+
